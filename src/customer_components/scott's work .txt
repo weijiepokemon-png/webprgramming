@@ -1,3 +1,25 @@
 for user to login n see their cart n orders
 
 user also viewing through the visitor pages
+
+2 functionalities;
+- user edit profile
+- user view order history
+
+//user edit profile ----------------------------------
+
+user create n edit account details, watever details ask chatgpt
+list of details they can input
+with 2 buttons of cancel n submit
+
+use brain plz ty
+
+
+
+
+
+//view order history--------------------
+it display list that use the ItemDisplayed component
+check the miro board for how this could look lik
+an order is a grp with the ItemDisplayed in each, they can be squished
+beside them is the total bill of that order

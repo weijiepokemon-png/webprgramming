@@ -1,3 +1,16 @@
 make actual page that ppl see when they use they site, the layout of things to buy, etc. can follow e-commerce sits like aliexpress
 
 put all ur components in the folder, can make a page component that calls the other things
+
+
+components for the visitor component;
+home button
+search bar
+cart button
+
+item displayed
+item image
+item description
+
+payment gateway with the rest of the stuff
+read bro
