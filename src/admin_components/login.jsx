@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
+//  i am the login button, not login screen
+
 
 //the part that asks for login
 function LoginButton(props){
@@ -11,12 +14,25 @@ function LoginButton(props){
     
 
     //set text depending on prop from app
+  function setWord(){
+    if (props.state=== "visitor"){
+      return "log in or sign up";
+    }
+    else if(props.state==="customer"){
+      return "settings";
+    }
+    else{
+      return "something is broken";
+    }
 
+
+    return buttonText;
+  }
 
     return(
-      <button>
-        {buttonText}
-      </button>
+      <Link to="/loginsignup" >
+        {setWord()}
+      </Link>
     );
 }
 export default LoginButton;
