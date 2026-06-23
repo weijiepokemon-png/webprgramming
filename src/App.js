@@ -14,6 +14,9 @@ import ViewOrderHistory from './userHandling_component/vieworderhistory';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Checkout from './userHandling_component/checkout';
 
+import 'bootstrap/dist/css/bootstrap.min.css';   // IMPORT CSS FROM BOOTSTRAP
+//for the elements, give it className attribute value
+
 const router=createBrowserRouter([
   {path: "/", element: <NormalPage />},    //default view
   {path: "/loginsignup", element: <LoginSignup/>},
