@@ -5,29 +5,48 @@ import SearchBar from '../visitor_components/searchBar';
 import CartButton from '../visitor_components/cartButton';
 import Testbackend1 from '../database_components/test';
 
+import ItemDisplayed from '../visitor_components/itemDisplayed';
+
+//THE HOME PAGE. IT SHOWS SOME ITEMS ON DISPLAYED WITH BUTTONS ON TOP
 
 function NormalPage(props){
     //this is the container for the normal page
 
-      const [user, setUser]= useState("visitor");
+      const [user, setUser]= useState("visitor"); //to determine if user is visitor, customer or admin
 
 
-    return(<>
+    return(<div className='bg-light text-white min-vh-100 ' >
 
-    <HomeButton/>
-    <SearchBar/>
-    <LoginButton state={user} updaterMethod={setUser}/>
-    <CartButton/>
+<div className="d-flex align-items-center gap-3">
+    <HomeButton />
+    <SearchBar />
+    <LoginButton state={user} updaterMethod={setUser} />
+    <CartButton />
+    </div>
 
-    <h1 className='bg-primary'> i am the normal page that shows the webstore</h1>
+    <h1 className='bg-primary'> i am the normal page that shows the webstore, the home page</h1>
 
-    <Testbackend1 id={1}/>
+    
+<ItemDisplayed id={19}/>
+<ItemDisplayed id={20}/>
+<ItemDisplayed id={21}/>
+<ItemDisplayed id={22}/>
+<ItemDisplayed id={23}/>
+<ItemDisplayed id={24}/>
+
+   </div>
+    );
+
+
+}
+export default NormalPage;
+/*
+my list of arhived stuff; =====================================================
+<Testbackend1 id={1}/>
         <Testbackend1 id={2}/>
     <Testbackend1 id={3}/>
 
-
-
-    <button >test</button>
+ <button >test</button>
     <button className="btn btn-primary">Click Me</button>
     <button className="btn btn-primary">Blue</button>
 <button className="btn btn-success">Green</button>
@@ -40,12 +59,10 @@ function NormalPage(props){
   Click Me
 </button>
 
-    </>);
 
+*/
 
-}
-
-/**
+/** ===================================================================================================
  * to use bootstrap css, import it from root, then in each element, state the classname
  * the class name inside state which style to use
  * 
@@ -185,7 +202,7 @@ table — Styles a plain HTML table
 table-hover — Highlights rows on hover
 table-dark — Dark header row
 table-responsive — Horizontal scroll on mobile
-===================================================================================================
+
 
 when needing multiple, put in same class name together, below example;
  <button className="btn btn-primary btn-lg mt-3 px-4 fw-bold">
@@ -202,4 +219,250 @@ when needing multiple, put in same class name together, below example;
 	•	fw-bold — makes the text bold
  *  
  */
-export default NormalPage;
+
+  /**=====================================================================================================
+   * If you're asking about **Bootstrap border utility classes**, here are the main border-related keywords available in Bootstrap 5:
+
+### Add Borders
+
+```html
+border
+border-top
+border-bottom
+border-start
+border-end
+```
+
+### Remove Borders
+
+```html
+border-0
+border-top-0
+border-bottom-0
+border-start-0
+border-end-0
+```
+
+### Border Colors
+
+```html
+border-primary
+border-secondary
+border-success
+border-danger
+border-warning
+border-info
+border-light
+border-dark
+border-white
+```
+
+Also available with theme colors:
+
+```html
+border-body
+border-body-secondary
+border-body-tertiary
+border-black
+```
+
+### Border Width
+
+```html
+border-1
+border-2
+border-3
+border-4
+border-5
+```
+
+### Border Opacity
+
+```html
+border-opacity-10
+border-opacity-25
+border-opacity-50
+border-opacity-75
+border-opacity-100
+```
+
+### Rounded Corners
+
+```html
+rounded
+rounded-0
+rounded-1
+rounded-2
+rounded-3
+rounded-4
+rounded-5
+rounded-pill
+rounded-circle
+```
+
+### Rounded Specific Sides
+
+```html
+rounded-top
+rounded-bottom
+rounded-start
+rounded-end
+```
+
+### Rounded Specific Corners
+
+```html
+rounded-top-start
+rounded-top-end
+rounded-bottom-start
+rounded-bottom-end
+```
+
+### Example
+
+```jsx
+<div className="border border-primary border-3 rounded-3">
+  Content
+</div>
+```
+
+This creates:
+
+* Border enabled
+* Primary color
+* Width 3
+* Medium rounded corners
+
+If you mean **CSS `border-style` keywords**, those are:
+
+```css
+border-style: solid;
+border-style: dashed;
+border-style: dotted;
+border-style: double;
+border-style: groove;
+border-style: ridge;
+border-style: inset;
+border-style: outset;
+border-style: none;
+border-style: hidden;
+```
+
+   */
+
+/**
+ * For **Bootstrap 5 background utility classes**, the main options are:
+
+### Theme Background Colors
+
+```html
+bg-primary
+bg-secondary
+bg-success
+bg-danger
+bg-warning
+bg-info
+bg-light
+bg-dark
+bg-black
+bg-white
+```
+
+### Body / Theme-Aware Backgrounds
+
+```html
+bg-body
+bg-body-secondary
+bg-body-tertiary
+```
+
+### Transparent
+
+```html
+bg-transparent
+```
+
+### Background Opacity
+
+Used together with a background color:
+
+```html
+bg-opacity-10
+bg-opacity-25
+bg-opacity-50
+bg-opacity-75
+bg-opacity-100
+```
+
+Example:
+
+```jsx
+<div className="bg-primary bg-opacity-25">
+  Content
+</div>
+```
+
+### Gradient
+
+```html
+bg-gradient
+```
+
+Example:
+
+```jsx
+<div className="bg-primary bg-gradient">
+  Content
+</div>
+```
+
+### Common Related Utilities
+
+#### Text Color
+
+```html
+text-primary
+text-secondary
+text-success
+text-danger
+text-warning
+text-info
+text-light
+text-dark
+text-white
+text-body
+text-muted
+```
+
+#### Shadows
+
+```html
+shadow-none
+shadow-sm
+shadow
+shadow-lg
+```
+
+#### Opacity
+
+```html
+opacity-0
+opacity-25
+opacity-50
+opacity-75
+opacity-100
+```
+
+### Example
+
+```jsx
+<Card className="bg-dark text-white border border-secondary shadow rounded-3">
+  <Card.Body>
+    Dark card
+  </Card.Body>
+</Card>
+```
+
+If you're looking for a complete Bootstrap styling cheat sheet (spacing, flex, sizing, colors, borders, backgrounds, typography, etc.), I can provide that as well.
+
+ */
