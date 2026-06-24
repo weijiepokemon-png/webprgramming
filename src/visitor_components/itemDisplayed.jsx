@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // this would be the item element that shows the items when searched
 //THIS COMPONENT IS WAT IS SHOWN TO USER ON NORMAL PAGE, OF THE ITEM. ALSO WHEN SEARCHED. HORIZONTAL LAYOUT
@@ -31,22 +32,25 @@ const headers = {'Accept': 'application/json'};//for axios getter
          })
 
 
-        .catch((error) => { console.log(error);});
+        .catch((error) => { console.log(error);
+          //in case of failure when loading data
+          productID= props.id;//set index of item from list first     
+            setProduct(`DATA LOADING FAILED`);  //direct the result to the data
+            setDescription(`the load failed. check the docker engine`);  
+
+        });
 // if u check console, it can get the data properly.  make sure docker is running
 
 
+  const navigate = useNavigate();
 
     //make user click on this then move to the dedicated item page
-    const goTo= () =>{
-        //i need the id of the item
-
-    }
-
+    //but need to send the item id as prop value
     
     return(
        
          <div className="card container shadow-sm lead border-dark border-2 mb-3 mb-4 "
-         onClick={goTo}>
+         onClick={() => navigate("/itempage")}>
 
       <img
         

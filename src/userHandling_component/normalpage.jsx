@@ -7,6 +7,9 @@ import Testbackend1 from '../database_components/test';
 
 import ItemDisplayed from '../visitor_components/itemDisplayed';
 
+import AboutButton from '../visitor_components/aboutButton';
+import Contactbutton from '../visitor_components/contactbutton';
+
 //THE HOME PAGE. IT SHOWS SOME ITEMS ON DISPLAYED WITH BUTTONS ON TOP
 
 function NormalPage(props){
@@ -17,11 +20,13 @@ function NormalPage(props){
 
     return(<div className='bg-light text-white min-vh-100 ' >
 
-<div className="d-flex align-items-center gap-3">
-    <HomeButton />
-    <SearchBar />
-    <LoginButton state={user} updaterMethod={setUser} />
-    <CartButton />
+    <div className="d-flex align-items-center gap-3">
+      <HomeButton />
+      <SearchBar />
+      <LoginButton state={user} updaterMethod={setUser} />
+      <CartButton />
+      <AboutButton/>
+      <Contactbutton/>
     </div>
 
     <h1 className='bg-primary'> i am the normal page that shows the webstore, the home page</h1>

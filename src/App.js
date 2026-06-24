@@ -17,10 +17,18 @@ import Checkout from './userHandling_component/checkout';
 import 'bootstrap/dist/css/bootstrap.min.css';   // IMPORT CSS FROM BOOTSTRAP
 //for the elements, give it className attribute value
 
+import AboutPage from './visitor_components/aboutPage';
+import Contactpage from './visitor_components/contactpage';
+import ItemPage from './visitor_components/itemPage';
+
 const router=createBrowserRouter([
   {path: "/", element: <NormalPage />},    //default view
   {path: "/loginsignup", element: <LoginSignup/>},
-  {path: "/checkout", element: <Checkout/>}
+  {path: "/checkout", element: <Checkout/>},
+  {path: "/about", element:<AboutPage/> },
+  {path:"/contact", element: <Contactpage/>},
+  {path:"/itempage", element:<ItemPage />}
+
 
 
 
