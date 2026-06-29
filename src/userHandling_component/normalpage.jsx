@@ -29,9 +29,12 @@ function NormalPage(props){
       <Contactbutton/>
     </div>
 
-    <h1 className='bg-primary'> i am the normal page that shows the webstore, the home page</h1>
+    <h1 className='bg-primary'> WELCOME TO ENTERTAINMENT GUILD WEBSTORE</h1>
 
-    
+
+<ItemDisplayed id={4}/>
+<ItemDisplayed id={2}/>
+    <ItemDisplayed id={18}/>
 <ItemDisplayed id={19}/>
 <ItemDisplayed id={20}/>
 <ItemDisplayed id={21}/>

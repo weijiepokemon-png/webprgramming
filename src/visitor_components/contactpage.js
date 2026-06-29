@@ -9,7 +9,7 @@ return(<div>
       <HomeButton />
      
     </div>
-    <h1 className='bg-primary'> i am the contact page</h1>
+    <h1 className='bg-primary'> CONTACT US</h1>
     
 <div>
     <label>name:</label>

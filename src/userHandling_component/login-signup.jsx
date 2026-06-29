@@ -14,7 +14,7 @@ function LoginSignup(){
     
         
     <div  className=" align-items-center gap-3 d-flex flex-column">
-        <h1> i am the login sign up page</h1>
+        <h1> Time to log in!</h1>
         <div>
             <label>Username:</label>
             <input type="text"/>
@@ -27,13 +27,13 @@ function LoginSignup(){
             <button className="btn btn-success">SUBMIT</button>
         </div>
         <div className=" d-flex align-items-center flex-column" >
-            <h3>don't have an account? sign up below.</h3>
+            <h3>Don't have an account? Sign up below!</h3>
             <button className="btn btn-primary ">SIGN UP</button>
 
         </div>
         <div className=" d-flex align-items-center flex-column">
-<h3>for admins, log in below</h3>
-            <button className="btn btn-dark ">admin login</button>
+<h3>For administrators ONLY, log in below.</h3>
+            <button className="btn btn-dark ">ADMIN LOGIN</button>
 
         </div>
             

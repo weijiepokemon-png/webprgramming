@@ -1,3 +1,5 @@
+//THIS IS THE FIRST TEST DRIVE OF CONNECTION TO DATABASE
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 

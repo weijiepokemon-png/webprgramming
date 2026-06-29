@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { AppContext } from "../userHandling_component/globalVar";
+import { useApp } from "../userHandling_component/globalVar";
 // this would be the item element that shows the items when searched
 //THIS COMPONENT IS WAT IS SHOWN TO USER ON NORMAL PAGE, OF THE ITEM. ALSO WHEN SEARCHED. HORIZONTAL LAYOUT
 
@@ -17,11 +18,23 @@ const headers = {'Accept': 'application/json'};//for axios getter
     let [description, setDescription]=useState();
     let productID= props.id; //make component belong to product via id
 
+
+useEffect( () =>{
+  productID=props.id;
+},[]
+
+
+);
+
     //this is the axios getter. the response object is UNREACHABLE outside this method, so need to direct it to use state var
-    axios.get("http://localhost:3001/api/inft3050/Product", {headers: headers})
+    axios.get("http://localhost:3001/api/inft3050/Product?limit=410", {headers: headers}) //with increased limit, can show all product in console but now component cannot display them
         .then((response) => { 
            //on successful retreival, do below, which is print the data in specific ways
-       // console.log(JSON.stringify(response.data.list[productID], null, 2)); //print the json, convert the json to string. dont touch the 2 next arguments
+      //  console.log(JSON.stringify(response.data.list[productID], null, 2)); //print the json, convert the json to string. dont touch the 2 next arguments
+       
+       //print to test
+       // console.log('I AM EVERYTHING:');
+        //console.log(JSON.stringify(response.data.list, null, 2)); //print the json, convert the json to string. dont touch the 2 next arguments
 
         //set data to  var
             productID= props.id;//set index of item from list first     
@@ -41,61 +54,45 @@ const headers = {'Accept': 'application/json'};//for axios getter
         });
 // if u check console, it can get the data properly.  make sure docker is running
 
+//reference to use app method, reference the setter method
+let {setItemID}=useApp();
+let{itemID}=useApp();
 
-  const navigate = useNavigate();
 
-    //make user click on this then move to the dedicated item page
-    //but need to send the item id as prop value
-    
+
+function updateG(){
+   setItemID(i => itemID=productID); //now in sync
+
+}
+
+function movepage(){
+     navigate("/itempage");
+
+}
+
+ function changePage() {
+  updateG();
+   console.log(productID); //this  var is updating
+   console.log(itemID);// global var doesnt always update
+   movepage();
+}
+
+  const navigate = useNavigate(); //reference to use the method
     return(
        
          <div className="card container shadow-sm lead border-dark border-2 mb-3 mb-4 "
-         onClick={() => navigate("/itempage")}>
+         onClick={changePage}>
 
-      <img
-        
-      />
-      <h3> ID: {productID}</h3>
+      <img />
 
       <h3> name: {product}</h3>
 
-      <p> description: {description}</p>
 
 
     </div>
        
     );
+ 
 }
 export default ItemDisplayed;
 
-
-
-/** meet's original-----------------------------------------------
- * 
- * import { Link } from "react-router-dom";
-
-function ProductCard({ product }) {
-  return (
-    <div className="product-card">
-
-      <img
-        src={product.image}
-        alt={product.name}
-      />
-
-      <h3>{product.name}</h3>
-
-      <p>${product.price}</p>
-
-      <Link to={`/product/${product.id}`}>
-        <button>View Details</button>
-      </Link>
-
-    </div>
-  );
-}
-
-export default ProductCard;
- * 
- * 
- */

@@ -7,7 +7,7 @@ function Contactbutton(){
     return(<>
    
           <Link to="/contact" >
-       <h4>contact us</h4>
+       <h4>CONTACT US</h4>
       </Link>
        </>
 

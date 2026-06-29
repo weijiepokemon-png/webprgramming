@@ -7,7 +7,7 @@ function AboutButton(){
     return(<>
    
           <Link to="/about" >
-       <h4>about us</h4>
+       <h4>ABOUT US</h4>
       </Link>
        </>
 

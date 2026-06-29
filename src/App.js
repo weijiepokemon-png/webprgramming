@@ -1,6 +1,6 @@
 import logo from './logo.svg'; //how to import graphics
 import './App.css'; //how to import css
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 //the master pages that handle when page changes
 import NormalPage from './userHandling_component/normalpage';
@@ -21,23 +21,25 @@ import AboutPage from './visitor_components/aboutPage';
 import Contactpage from './visitor_components/contactpage';
 import ItemPage from './visitor_components/itemPage';
 
+import { useApp } from './userHandling_component/globalVar';
+
 const router=createBrowserRouter([
   {path: "/", element: <NormalPage />},    //default view
   {path: "/loginsignup", element: <LoginSignup/>},
   {path: "/checkout", element: <Checkout/>},
   {path: "/about", element:<AboutPage/> },
   {path:"/contact", element: <Contactpage/>},
-  {path:"/itempage", element:<ItemPage />}
-
-
-
-
+  {path:"/itempage", element:<ItemPage />} //this page is getting prop from global var
+  
 ]);
+
 
 
 //the main thing
 function App() {
   //a method that returns a html element. only 1 parent that holds everything inside
+//const {newid}= useApp();
+
 
  return <RouterProvider router={router} />;
 }

@@ -16,7 +16,7 @@ function LoginButton(props){
     //set text depending on prop from app
   function setWord(){
     if (props.state=== "visitor"){
-      return "log in or sign up";
+      return "LOGIN/SIGNUP";
     }
     else if(props.state==="customer"){
       return "settings";
@@ -31,7 +31,7 @@ function LoginButton(props){
 
     return(
       <Link to="/loginsignup" >
-        {setWord()}
+       <h4>{setWord()}</h4>
       </Link>
     );
 }

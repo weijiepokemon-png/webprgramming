@@ -4,12 +4,17 @@ import './index.css'; //import css
 import App from './App'; //import app component
 import reportWebVitals from './reportWebVitals';
 
-//this is root file js
+import { AppProvider } from './userHandling_component/globalVar'; //import the global variables
+
+
+//this is root file js============================================================
 //it holds a app component
 const root = ReactDOM.createRoot(document.getElementById('root')); //get the root element by links from the imports
 root.render(
+  //put the app in the app provider global field
   <React.StrictMode>
-    <App />
+    <AppProvider> <App /> </AppProvider>
+   
   </React.StrictMode>
 );
 

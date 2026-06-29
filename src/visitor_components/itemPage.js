@@ -10,11 +10,29 @@ import SearchBar from '../visitor_components/searchBar';
 import CartButton from '../visitor_components/cartButton';
 import { useEffect, useState } from "react";
 
+//import { useState } from "react";
+import { useApp } from "../userHandling_component/globalVar"; //import method to collect global var
+import AddToCart from "./addToCartButton";
+
 
 function ItemPage(props){
     //use prop to handle item by the id
-const [user, setUser]= useState("visitor"); 
-return(<>
+let [user, setUser]= useState("visitor"); 
+
+let[pageid, setpageid]=useState();
+
+//let {itemname,ItemDescription} = useApp();//id of the item on this page
+let {itemID}= useApp();
+
+//let thisid=itemID;
+
+useEffect( ()=>{
+   // thisid=itemID;
+   setpageid(i => pageid= itemID); //now can get from global var
+},[] )
+
+return(
+    <>
 <div className="d-flex align-items-center gap-3">
       <HomeButton />
       <SearchBar />
@@ -22,10 +40,11 @@ return(<>
       <CartButton />
     
     </div>
-<ItemImage id={19}/>
-<ItemDescription id={19}/>
+    <h1>I AM THE ITEM'S PAGE</h1>
 
-<h1>I AM THE ITEM'S PAGE</h1>
+<ItemImage id={pageid}/>
+<ItemDescription id={pageid}/>
 
+<AddToCart/>
 </>);
 }export default ItemPage

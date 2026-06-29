@@ -28,14 +28,81 @@ function AboutPage(){
       <HomeButton />
      
     </div>
-    <h1 className='bg-primary'> i am the about page</h1>
-<p>dddadas fddogogdsidsjj fjvfbgfnbgnht eogpoegjwrop egrpg  m egerggre rgfgfdgds <br/>dds rgdfgtrt reg erg rg r hdfgegergegioegjtop erongre rije adadsad</p>
+    <h1 className='bg-primary'> About US</h1>
+
+   <div className="about-page">
+
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Entertainment Guild</h1>
+          <h3>Let Us Entertain You</h3>
+          <p>
+            Bringing the world of entertainment closer to you through
+            premium products, exclusive collections, and unforgettable experiences.
+          </p>
+        </div>
+      </section>
+
+      <section className="about-section">
+        <div className="about-card">
+          <h2>Who We Are</h2>
+
+          <p>
+            Entertainment Guild is a leading online platform dedicated to
+            providing high-quality entertainment products for customers of all
+            ages. Whether you're passionate about gaming, movies, music,
+            collectibles, or the latest entertainment technology, we have
+            something for everyone.
+          </p>
+
+          <p>
+            Our team carefully selects products from trusted suppliers to ensure
+            quality, reliability, and customer satisfaction. We aim to create a
+            community where entertainment enthusiasts can discover exciting new
+            products and stay connected with the latest trends.
+          </p>
+
+          <p>
+            Since our establishment, our goal has been simple: to make
+            entertainment accessible, enjoyable, and affordable for everyone.
+            Through innovation and excellent customer service, Entertainment
+            Guild continues to grow as a trusted destination for entertainment
+            lovers worldwide.
+          </p>
+        </div>
+
+        <div className="stats">
+          <div className="stat-card">
+            <h2>500+</h2>
+            <p>Products Available</p>
+          </div>
+
+          <div className="stat-card">
+            <h2>10K+</h2>
+            <p>Happy Customers</p>
+          </div>
+
+          <div className="stat-card">
+            <h2>24/7</h2>
+            <p>Customer Support</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
     </div>);
-
-
-
-
 }export default AboutPage
