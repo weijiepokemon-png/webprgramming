@@ -32,15 +32,17 @@ function NormalPage(props){
     <h1 className='bg-primary'> WELCOME TO ENTERTAINMENT GUILD WEBSTORE</h1>
 
 
-<ItemDisplayed id={4}/>
-<ItemDisplayed id={2}/>
-    <ItemDisplayed id={18}/>
-<ItemDisplayed id={19}/>
-<ItemDisplayed id={20}/>
-<ItemDisplayed id={21}/>
+<ItemDisplayed id={0}/>
+<ItemDisplayed id={23}/>
+    <ItemDisplayed id={25}/>
+<ItemDisplayed id={29}/>
+<ItemDisplayed id={90}/>
+<ItemDisplayed id={1}/>
 <ItemDisplayed id={22}/>
 <ItemDisplayed id={23}/>
-<ItemDisplayed id={24}/>
+<ItemDisplayed id={8}/>
+<ItemDisplayed id={280}/>
+
 
    </div>
     );

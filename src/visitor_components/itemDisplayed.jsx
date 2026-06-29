@@ -20,14 +20,14 @@ const headers = {'Accept': 'application/json'};//for axios getter
 
 
 useEffect( () =>{
-  productID=props.id;
+  productID=props.id ;
 },[]
 
 
 );
 
     //this is the axios getter. the response object is UNREACHABLE outside this method, so need to direct it to use state var
-    axios.get("http://localhost:3001/api/inft3050/Product?limit=410", {headers: headers}) //with increased limit, can show all product in console but now component cannot display them
+    axios.get("http://localhost:3001/api/inft3050/Product?limit=410", {headers: headers}) //with increased limit, can show all product in console , max array index 299 - last object, legend of zelda, id400
         .then((response) => { 
            //on successful retreival, do below, which is print the data in specific ways
       //  console.log(JSON.stringify(response.data.list[productID], null, 2)); //print the json, convert the json to string. dont touch the 2 next arguments
@@ -49,7 +49,7 @@ useEffect( () =>{
           //in case of failure when loading data
           productID= props.id;//set index of item from list first     
             setProduct(`DATA LOADING FAILED`);  //direct the result to the data
-            setDescription(`the load failed. check the docker engine`);  
+            setDescription(`the load failed. check the docker engine. on the docker first then do npm start`);  
 
         });
 // if u check console, it can get the data properly.  make sure docker is running

@@ -1,11 +1,14 @@
 //this is the login n signup page
 import HomeButton from "../visitor_components/homeButton";
+import { useNavigate } from "react-router-dom";
+
 function LoginSignup(){
     //at the top is the home button
     // in the center is the login inputs
 
     //CURRENTLY BUTTONS N INPUTS CANNOT DO ANYTHING
 
+  const navigate = useNavigate(); 
 
     return(<div>
     <HomeButton/>
@@ -33,7 +36,7 @@ function LoginSignup(){
         </div>
         <div className=" d-flex align-items-center flex-column">
 <h3>For administrators ONLY, log in below.</h3>
-            <button className="btn btn-dark ">ADMIN LOGIN</button>
+            <button className="btn btn-dark " onClick={() => navigate("/adminLogin")}>ADMIN LOGIN</button>
 
         </div>
             

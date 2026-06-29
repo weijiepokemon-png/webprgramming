@@ -22,15 +22,16 @@ import Contactpage from './visitor_components/contactpage';
 import ItemPage from './visitor_components/itemPage';
 
 import { useApp } from './userHandling_component/globalVar';
-
+import AdminLogin from './admin_components/adminLogin';
 const router=createBrowserRouter([
   {path: "/", element: <NormalPage />},    //default view
   {path: "/loginsignup", element: <LoginSignup/>},
   {path: "/checkout", element: <Checkout/>},
   {path: "/about", element:<AboutPage/> },
   {path:"/contact", element: <Contactpage/>},
-  {path:"/itempage", element:<ItemPage />} //this page is getting prop from global var
-  
+  {path:"/itempage", element:<ItemPage />}, //this page is getting prop from global var
+  {path:"/adminLogin", element:<AdminLogin/>},
+  {path:"/adminPage", element:<Page/>}, //the admin dashboard
 ]);
 
 
