@@ -14,7 +14,6 @@ function Page(){
     return(
         <>
         <Link to="/">LOGOUT</Link>
-        <h1>I AM THE ADMIN DASHBOARD</h1>
             <Options/>
             <Table/>
         </>

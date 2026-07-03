@@ -14,18 +14,23 @@ export const AppContext = createContext(null);
 export function AppProvider({ children }) {
     //the variables
   const [user, setUser] = useState(null);
-let [itemID, setItemID]=useState(null);
+let [itemID, setItemID]=useState(null); //using this for both item page n editing
 let [itemname,setname]= useState(null);
 let [ItemDescription,gsetDescription]=useState(null);
+let[  ItemAuthor,setItemAuthor]=useState(null);
+let[id,setID]=useState(null);
 
 //return component, the children is the app component
+//currently only using itemid n its setter for item page n editing item
   return (
     <AppContext.Provider
       value={{
         user,setUser,
-        itemID,setItemID,
+        itemID,setItemID, //actually the array index, not the item id
         itemname,setname,
         ItemDescription,gsetDescription,
+        ItemAuthor,setItemAuthor,
+        id,setID,
       }}
     >
       {children}

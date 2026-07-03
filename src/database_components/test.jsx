@@ -42,8 +42,13 @@ below the things after the root. use console.log to show wats inside to get the 
 /api/inft3050/Product
 /api/inft3050/Source
 /api/inft3050/Stocktake
-/api/inft3050/User
-/api/inft3050/TO
+/api/inft3050/User - admin , employee data
+/api/inft3050/TO - for customer, but all updates should go to this table
+
+login use hashing, salt n password in database
+when login, find the matched customer n email from database
+retype the salt of the customer
+combine salt n password n hash n this would compare with backend
  */
 
 //data is global var

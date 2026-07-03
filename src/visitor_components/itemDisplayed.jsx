@@ -73,7 +73,7 @@ function movepage(){
  function changePage() {
   updateG();
    console.log(productID); //this  var is updating
-   console.log(itemID);// global var doesnt always update
+   console.log(itemID);// global var also update
    movepage();
 }
 
