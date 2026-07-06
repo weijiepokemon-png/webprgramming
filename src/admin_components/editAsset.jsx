@@ -27,6 +27,7 @@ let{setID}=useApp();
     let [description, setDescription]=useState();
 let [author, setauthor]=useState();
 let [listID, setListID]=useState();
+let[price, setPrice]=useState();
 
     
 
@@ -40,6 +41,15 @@ let [listID, setListID]=useState();
 
         }).catch((error) => { console.log(error);}
     );
+
+          //get the price from stocktake
+ axios.get("http://localhost:3001/api/inft3050/Stocktake?limit=500", {headers: headers}) 
+      .then( (response) => {
+        // console.log(response.data.list[productID].Price); 
+        setPrice(JSON.stringify(response.data.list[itemID].Price, null, 2));}  )
+      .catch(  (error) => { 
+     //   console.log(error);
+     } );
     
 
 function changeName(){
@@ -83,6 +93,20 @@ function changeAuthor(){
 
 }
 
+function changePrice(){
+        let input= prompt("ENTER NEW DETAIL");
+        if(input !==null){
+          console.log(`DATA: ${input}`);
+
+          //do post request to set the data for this
+          let i = {itemID}.itemID;
+          changeNameData(i , input);
+
+    }
+
+
+}
+
 //when clicking button at bottom of page, kill this asset
 function deleteAsset(){
     //call delete request on object, by the index
@@ -99,7 +123,7 @@ function deleteAsset(){
             console.log(index);
             console.log(typeof index);
             const response = await fetch(`http://localhost:3001/api/inft3050/Product/${index}/Name?limit=410`, {
-                method: 'PUT',
+                method: 'PATCH',
                 headers: {'Content-Type': 'application/json',},
                 body: JSON.stringify(data),
             });
@@ -150,7 +174,10 @@ return(<>
 
         </tbody>
         </table>
-  <button onClick={deleteAsset}>DELETE</button>
+        <h2>PRICE: ${price}</h2>
+        <button onClick={changePrice}>EDIT</button>
+        <br/><br/>
+  <button onClick={deleteAsset}>DELETE ITEM</button>
             
         
            

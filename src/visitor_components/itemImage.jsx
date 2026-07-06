@@ -2,6 +2,8 @@
 import { useState } from "react";
 import axios from "axios";
 
+//there is no images in the database, this component will not be used
+
 function ItemImage(props){
 
     //the image of the item. this component will be reused for diff items

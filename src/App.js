@@ -27,6 +27,7 @@ import EditAsset from './admin_components/editAsset';
 import EditProfile from './customer_components/editDetails';
 import CustomerProfile from './customer_components/customerproile';
 import OrderHistory from './customer_components/oderhistorypage';
+import Usertable from './admin_components/admin_userview';
 
 //the router directories
 const router=createBrowserRouter([
@@ -41,7 +42,8 @@ const router=createBrowserRouter([
   {path:"/editAsset", element:<EditAsset/>}, //edit item page for admin
   {path:"/editProfile", element:<EditProfile/>},
   {path:"/viewCustomerProfile", element:<CustomerProfile/>},
-  {path:"/orderHistory", element:<OrderHistory/>}
+  {path:"/orderHistory", element:<OrderHistory/>},
+  {path:"/usertable", element:<Usertable/>}
 ]);
 
 

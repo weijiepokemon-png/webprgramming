@@ -40,9 +40,7 @@ return(
       <CartButton />
     
     </div>
-    <h1>I AM THE ITEM'S PAGE</h1>
 
-<ItemImage id={pageid}/>
 <ItemDescription id={pageid}/>
 
 <AddToCart/>

@@ -19,6 +19,7 @@ let [itemArrayIndex, setIndex]=useState([]); //this should not be used
 let {itemID} = useApp();
 let {setItemID}=useApp();
 
+let[price, setPrice]=useState();
 
 
 //map out the data
@@ -30,9 +31,11 @@ let printedData = data.map( (data,index)=> (
                 <td>{data.Name}</td> 
                 <td>{data.Description}</td> 
                 <td>{data.Author}</td>
+                
                 <td><button onClick={() => toEdit(index)}>EDIT</button></td>
                
             </tr>
+            //<td>${getPrice(index)}</td>
 ) );
 
 //when clicked edit button, open popup or new page to edit data, delete button below it
@@ -40,23 +43,24 @@ function toEdit(i){
     //can move to another page, use global var to keep the array index
    //setItemID(i => itemID=productID);
     setItemID(i);
-    console.log(`set the global var to ${i}` );
-         navigate("/editAsset");
-
-
-
+   // console.log(`set the global var to ${i}` );
+navigate("/editAsset");
 
 }
+function getPrice(i){
+      //get the price from stocktake
+ axios.get("http://localhost:3001/api/inft3050/Stocktake?limit=500", {headers: headers}) 
+      .then( (response) => {
+        // console.log(response.data.list[productID].Price); 
+        setPrice(JSON.stringify(response.data.list[itemID].Price, null, 2));}  )
+      .catch(  (error) => { 
+     //   console.log(error);
+     } );
 
-//currently unused
-let printStats = (index, id,name,description,author) =>{
-   // printedData += <li>{index} {id} {name} {description} {author}</li> ;
-    console.log(index);
-    console.log(id);
-    console.log(name);
-    console.log(description);
-    console.log(author);
+     return price;
 }
+
+
 
 const headers = {'Accept': 'application/json'};
 const navigate = useNavigate(); 
@@ -69,13 +73,13 @@ axios.get(
 .then ( (response) =>{
   
     setData(response.data.list);
-
-
-
 });
-    },[]
 
-);
+
+
+
+
+},[]);
 
 //in the table, reference that variable
     return(
@@ -99,6 +103,8 @@ axios.get(
         </table>
         
         </>
+        //            <th>PRICE</th>
+
     );
 }
 export default Table;
