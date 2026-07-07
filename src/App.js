@@ -29,6 +29,9 @@ import CustomerProfile from './customer_components/customerproile';
 import OrderHistory from './customer_components/oderhistorypage';
 import Usertable from './admin_components/admin_userview';
 
+import './App.css' //import css
+
+
 //the router directories
 const router=createBrowserRouter([
   {path: "/", element: <NormalPage />},    //default view

@@ -32,12 +32,12 @@ let printedData = data.map( (data,index)=> (
 useEffect(
             ()=> {
         axios.get(
-        "http://localhost:3001/api/inft3050/User?limit=1000",{    withCredentials: true}) 
+        "http://localhost:3001/api/inft3050/User?limit=1000",{   headers: headers}) 
         .then ( (response) =>{
         
             setData(response.data.list);
-            //console.log(response.data.list);
-        });
+            console.log(response.data.list);
+        }) .catch(  (error) => { console.log(error);}  );;
 
 },[]);
 
@@ -50,9 +50,8 @@ useEffect(
            
             <th>INDEX</th>
             <th>userID</th>
-            <th>username</th>
             <th>email</th>
-            <th>name</th>
+            <th>username</th>
             
            </tr>
      

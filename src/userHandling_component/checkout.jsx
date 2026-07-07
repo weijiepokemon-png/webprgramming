@@ -6,26 +6,26 @@ function Checkout() {
     <div>
 
       {/* Header */}
-      <button>Home</button>
+      
       <HomeButton/>
 
-      <input
-        type="text"
-        placeholder="Search products..."
-      />
+   
 
       <hr />
 
       {/* Cart Items */}
       <h2>Shopping Cart</h2>
-
+{/**
+ * this part will be the component collected from user
+ * let it be a list to display the component
+ */}
       <ItemDisplayed  id={90}/>
       <br />
 
       <ItemDisplayed  id={50}/>
       <br />
-
-      <ItemDisplayed  id={122}/>
+<ItemDisplayed  id={290}/>
+      <br />
 
       <hr />
 

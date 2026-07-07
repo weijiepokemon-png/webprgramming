@@ -119,16 +119,17 @@ function deleteAsset(){
         //try to set data
         try {
             //make http request to this object
-            console.log({itemID}.itemID); //debug data type argument
-            console.log(index);
-            console.log(typeof index);
-            const response = await fetch(`http://localhost:3001/api/inft3050/Product/${index}/Name?limit=410`, {
+            //console.log({itemID}.itemID); //debug data type argument
+           // console.log(index);
+            //console.log(typeof index);
+            const response = await fetch(`http://localhost:3001/api/inft3050/Product/${index}`, {
                 method: 'PATCH',
                 headers: {'Content-Type': 'application/json',},
-                body: JSON.stringify(data),
+                body: JSON.stringify({Name: data})
             });
 
             const newdata = await response.json(); //get the name attribute
+            console.log(`new data: ${newdata}`);
            // setUsers(users.map(user => (user.id === id ? newUser : user))); //update the local state, in the use state
         } 
 

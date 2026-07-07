@@ -51,7 +51,7 @@ axios.get("http://localhost:3001/api/inft3050/Product?limit=410", {headers: head
             setauthor(`DATA LOADING ...`);
             setListID(`DATA LOADING ...`);
             setProduct(`DATA LOADING ...`);
-           // setPrice(`data loading...`);
+            setPrice(`data loading...`);
 },[]);
 
 

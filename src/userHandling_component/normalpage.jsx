@@ -1,54 +1,89 @@
-import { useState } from 'react';
-import LoginButton from '../admin_components/login'
-import HomeButton from '../visitor_components/homeButton';
-import SearchBar from '../visitor_components/searchBar';
-import CartButton from '../visitor_components/cartButton';
-import Testbackend1 from '../database_components/test';
+import { useState } from "react";
+import LoginButton from "../admin_components/login";
+import HomeButton from "../visitor_components/homeButton";
+import SearchBar from "../visitor_components/searchBar";
+import CartButton from "../visitor_components/cartButton";
+import ItemDisplayed from "../visitor_components/itemDisplayed";
+import AboutButton from "../visitor_components/aboutButton";
+import Contactbutton from "../visitor_components/contactbutton";
+import { Link } from "react-router-dom";
+import Olditemdisplayed from "../visitor_components/olditemdisplayed";
+function NormalPage() {
 
-import ItemDisplayed from '../visitor_components/itemDisplayed';
-import AboutButton from '../visitor_components/aboutButton';
-import Contactbutton from '../visitor_components/contactbutton';
-import { Link } from 'react-router-dom';
+  const [user, setUser] = useState("visitor");
 
-//THE HOME PAGE. IT SHOWS SOME ITEMS ON DISPLAYED WITH BUTTONS ON TOP. this is the container for the normal page
+  // Default products shown when page loads
+  const defaultProducts = [
+   
+  ];
 
-function NormalPage(props){
+  const [products, setProducts] = useState(defaultProducts);
 
-      const [user, setUser]= useState("visitor"); //to determine if user is visitor, customer or admin
+  const resetProducts = () => {
+    setProducts(defaultProducts);
+  };
 
+  return (
+    <div className="bg-light text-black min-vh-100">
 
-    return(<div className='bg-light text-white min-vh-100 ' >
+      <div className="d-flex align-items-center gap-3">
 
-    <div className="d-flex align-items-center gap-3">
-      <HomeButton />
-      <SearchBar />
-      <LoginButton state={user} updaterMethod={setUser} />
-      <Link to="/editProfile">edit profile</Link>
-            <Link to="/viewCustomerProfile">view profile</Link>
+        <button
+          className="btn btn-primary"
+          onClick={resetProducts}
+        >
+          Home
+        </button>
 
-      <CartButton />
-      <AboutButton/>
-      <Contactbutton/>
+        <SearchBar setProducts={setProducts} />
+
+        <LoginButton
+          state={user}
+          updaterMethod={setUser}
+        />
+
+        <Link to="/editProfile">
+          Edit Profile
+        </Link>
+
+        <Link to="/viewCustomerProfile">
+          View Profile
+        </Link>
+
+        <CartButton />
+
+        <AboutButton />
+
+        <Contactbutton />
+
+      </div>
+
+      <h1 className="bg-primary text-center p-3">
+        WELCOME TO ENTERTAINMENT GUILD WEBSTORE
+      </h1>
+<h2>search result</h2>
+      {products.length === 0 ? (
+        <h2 className="text-dark text-center mt-5">
+search something!
+        </h2>
+      ) : (
+        
+        products.map((id) => (
+<ItemDisplayed key={id} id={id}/> ))
+        
+
+      )}
+<br/>
+<h1>suggested</h1>
+<Olditemdisplayed  id={0}/>
+<Olditemdisplayed  id={100}/>
+<Olditemdisplayed  id={250}/>
+<Olditemdisplayed  id={290}/>
+
+    
+
     </div>
-
-    <h1 className='bg-primary'> WELCOME TO ENTERTAINMENT GUILD WEBSTORE</h1>
-
-
-<ItemDisplayed id={0}/>
-<ItemDisplayed id={23}/>
-    <ItemDisplayed id={25}/>
-<ItemDisplayed id={29}/>
-<ItemDisplayed id={90}/>
-<ItemDisplayed id={1}/>
-<ItemDisplayed id={22}/>
-<ItemDisplayed id={23}/>
-<ItemDisplayed id={8}/>
-<ItemDisplayed id={280}/>
-
-
-   </div>
-    );
-
-
+  );
 }
+
 export default NormalPage;
