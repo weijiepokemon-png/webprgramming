@@ -30,11 +30,17 @@ import OrderHistory from './customer_components/oderhistorypage';
 import Usertable from './admin_components/admin_userview';
 
 import './App.css' //import css
+import AuthProvider from './userHandling_component/newAuthContext'; //authentication provider wraps the whole all including global variables provider
+import { Router } from 'react-router-dom';
 
-
+import { Outlet } from "react-router-dom";
 //the router directories
 const router=createBrowserRouter([
-  {path: "/", element: <NormalPage />},    //default view
+{element:(<AuthProvider> <Outlet/> </AuthProvider>),
+
+children:[
+
+  {path: "/", element:(  <NormalPage /> )},    //default view
   {path: "/loginsignup", element: <LoginSignup/>},
   {path: "/checkout", element: <Checkout/>},
   {path: "/about", element:<AboutPage/> },
@@ -47,15 +53,21 @@ const router=createBrowserRouter([
   {path:"/viewCustomerProfile", element:<CustomerProfile/>},
   {path:"/orderHistory", element:<OrderHistory/>},
   {path:"/usertable", element:<Usertable/>}
+]
+}
 ]);
-
 
 
 //the main thing. the method that returns a html element. only 1 parent that holds everything inside
 function App() {
 
-  // return based on the router
-  return <RouterProvider router={router} />;
+  return (
+  
+  <RouterProvider router={router} />
+
+
+  );
+
 }
 
 export default App; //keep this line

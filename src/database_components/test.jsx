@@ -1,5 +1,6 @@
 //THIS IS THE FIRST TEST DRIVE OF CONNECTION TO DATABASE
 
+/** 
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -28,6 +29,23 @@ const [i, setIndex]=useState();
 
 
 
+//data is global var
+    return(<>
+       {product}
+       <br></br>
+       <br></br>
+    </>)
+
+
+
+
+}//end of component 
+
+    
+export default Testbackend1
+
+*/
+
 
 /*
 below the things after the root. use console.log to show wats inside to get the value name
@@ -50,18 +68,3 @@ when login, find the matched customer n email from database
 retype the salt of the customer
 combine salt n password n hash n this would compare with backend
  */
-
-//data is global var
-    return(<>
-       {product}
-       <br></br>
-       <br></br>
-    </>)
-
-
-
-
-}//end of component 
-
-    
-export default Testbackend1

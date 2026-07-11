@@ -1,3 +1,5 @@
+/*
+
 export const AU_STATES = ['NSW', 'VIC', 'QLD', 'SA', 'WA', 'TAS', 'NT', 'ACT']
 
 export function validateAustralianAddress({ streetAddress, suburb, state, postCode }) {
@@ -12,3 +14,5 @@ export function validateAustralianAddress({ streetAddress, suburb, state, postCo
 export function validateEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }
+
+*/

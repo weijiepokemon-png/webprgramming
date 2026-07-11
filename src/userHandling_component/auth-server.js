@@ -1,3 +1,5 @@
+// I DO NOT KNOW WHAT THIS SCRIPT IS DOING
+/**
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
@@ -440,3 +442,5 @@ app.get('/me', requireAuth, (req, res) => {
 app.listen(PORT, () => {
   console.log(`Auth server listening on :${PORT}`);
 });
+
+*/

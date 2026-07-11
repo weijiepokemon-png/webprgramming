@@ -1,6 +1,9 @@
+// I DO NOT KNOW WHAT THIS SCRIPT IS DOING
+
+
 /**
  * MY ASSIGNMENT — Authentication API
- */
+
 const API_BASE = ''
 
 async function parseJson(response) {
@@ -50,3 +53,4 @@ export async function getCurrentUser() {
   if (response.status === 401) return null
   return parseJson(response)
 }
+ */

@@ -1,11 +1,10 @@
 //when user click on itemdisplayed, opens this page
 // then this page holds the item image, item description, shipping charges n add to cart button
-
-import ItemDescription
- from "./itemDescription";
- import ItemImage from "./itemImage";
- import LoginButton from '../admin_components/login'
+import LoginButton from '../admin_components/login';
 import HomeButton from '../visitor_components/homeButton';
+import ItemDescription from "./itemDescription";
+ import ItemImage from "./itemImage";
+ 
 import SearchBar from '../visitor_components/searchBar';
 import CartButton from '../visitor_components/cartButton';
 import { useEffect, useState } from "react";
@@ -43,6 +42,6 @@ return(
 
 <ItemDescription id={pageid}/>
 
-<AddToCart/>
+<AddToCart />
 </>);
 }export default ItemPage

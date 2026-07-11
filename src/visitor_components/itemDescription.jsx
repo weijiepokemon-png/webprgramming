@@ -60,13 +60,11 @@ axios.get("http://localhost:3001/api/inft3050/Product?limit=410", {headers: head
     return(
 
 
-        <div className="card container shadow-sm lead border-dark border-2 mb-3 mb-4 ">
+        <div className="card container shadow-sm lead border-dark border-2 mb-3 mb-4 bg-info" >
            
-            <h4>Index: {id}</h4>
-            <h4>ID: {listID}</h4>
-            <h2>NAME: {product}</h2>
-            <h5>AUTHOR: {author}</h5>
-            <h5>DESCRIPTION: {description}</h5>
+            <p className="fs-6 fw-semibold text-center lh-1">Index: {id}, ID: {listID}</p>
+            <h2 className="text-center">NAME: {product}</h2>
+            <h5 className=" fst-italic">AUTHOR: {author}, DESCRIPTION: {description}</h5>
             <h5>PRICE: ${price}</h5>
 
         </div>

@@ -6,8 +6,8 @@ import { useState } from "react";
 function Contactbutton(){
     return(<>
    
-          <Link to="/contact" >
-       <h4>CONTACT US</h4>
+          <Link to="/contact"  className="btn btn-primary" >
+       CONTACT US
       </Link>
        </>
 

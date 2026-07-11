@@ -1,3 +1,5 @@
+//unused script
+
 /**
  * MY ASSIGNMENT — Authentication (login page)
  */

@@ -16,8 +16,11 @@ let [itemName, setName]=useState([]);
 let [itemAuthor,setAuthor]=useState([]);
 let [itemDescription, setDescription]=useState([]);
 let [itemArrayIndex, setIndex]=useState([]); //this should not be used
-let {itemID} = useApp();
+let {itemID} = useApp();//the array index actually
 let {setItemID}=useApp();
+
+let{id}=useApp();//the actual id
+let{setID}=useApp();
 
 let[price, setPrice]=useState();
 
@@ -32,18 +35,20 @@ let printedData = data.map( (data,index)=> (
                 <td>{data.Description}</td> 
                 <td>{data.Author}</td>
                 
-                <td><button onClick={() => toEdit(index)}>EDIT</button></td>
+                <td><button onClick={() => toEdit(index, data.ID)}>EDIT</button></td>
                
             </tr>
             //<td>${getPrice(index)}</td>
 ) );
 
 //when clicked edit button, open popup or new page to edit data, delete button below it
-function toEdit(i){
+function toEdit(i,id){
     //can move to another page, use global var to keep the array index
    //setItemID(i => itemID=productID);
-    setItemID(i);
-   // console.log(`set the global var to ${i}` );
+    setID(id); //pass the item id and array index
+    //array index to pick item from array list, id to edit data
+   setItemID(i);
+    console.log(`set the global var to ${i} for product ARRAY INDEX` );
 navigate("/editAsset");
 
 }

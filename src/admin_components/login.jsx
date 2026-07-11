@@ -30,8 +30,8 @@ function LoginButton(props){
   }
 
     return(
-      <Link to="/loginsignup" >
-       <h4>{setWord()}</h4>
+      <Link to="/loginsignup"  className="btn btn-primary">
+       {setWord()}
       </Link>
     );
 }

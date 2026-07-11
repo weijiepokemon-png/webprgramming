@@ -1,7 +1,10 @@
+// I DO NOT KNOW WHAT THIS SCRIPT IS DOING
+
+
 /**
  * MY ASSIGNMENT — Authentication (session state)
  * Manages login, logout, register, and who is logged in (patron / admin / employee).
- */
+ 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { getCurrentUser, login as apiLogin, logout as apiLogout, register as apiRegister } from '../api/client'
 
@@ -65,3 +68,4 @@ export function useAuth() {
   if (!context) throw new Error('useAuth must be used within AuthProvider')
   return context
 }
+*/

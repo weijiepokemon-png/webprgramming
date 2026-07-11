@@ -8,6 +8,9 @@ import AboutButton from "../visitor_components/aboutButton";
 import Contactbutton from "../visitor_components/contactbutton";
 import { Link } from "react-router-dom";
 import Olditemdisplayed from "../visitor_components/olditemdisplayed";
+//import AuthProvider from './userHandling_component/newAuthContext'; //authentication provider wraps the whole all including global variables provider
+import AuthProvider from "./newAuthContext";
+
 function NormalPage() {
 
   const [user, setUser] = useState("visitor");
@@ -24,47 +27,49 @@ function NormalPage() {
   };
 
   return (
-    <div className="bg-light text-black min-vh-100">
+    <div className="bg-secondary-subtle text-black min-vh-100">
 
-      <div className="d-flex align-items-center gap-3">
+{/**nav bar */}
+      <div className="d-flex align-items-center gap-1">
 
-        <button
-          className="btn btn-primary"
-          onClick={resetProducts}
-        >
-          Home
-        </button>
+              <button
+                className="btn btn-primary"
+                onClick={resetProducts}
+              >
+                Home
+              </button>
 
-        <SearchBar setProducts={setProducts} />
+              <SearchBar setProducts={setProducts} />
 
-        <LoginButton
-          state={user}
-          updaterMethod={setUser}
-        />
+              <LoginButton
+                state={user}
+                updaterMethod={setUser}
+              />
 
-        <Link to="/editProfile">
-          Edit Profile
-        </Link>
+              <Link to="/editProfile"  className="btn btn-primary">
+                Edit Profile
+              </Link>
 
-        <Link to="/viewCustomerProfile">
-          View Profile
-        </Link>
+              <Link to="/viewCustomerProfile "  className="btn btn-primary">
+                View Profile
+              </Link>
 
-        <CartButton />
+              <CartButton />
 
-        <AboutButton />
+              <AboutButton />
 
-        <Contactbutton />
+              <Contactbutton />
 
       </div>
 
-      <h1 className="bg-primary text-center p-3">
+<br/>
+      <h1 className="display-2 fw-bold  text-center mb-4 bg-primary text-light border border-warning border-5"  >
         WELCOME TO ENTERTAINMENT GUILD WEBSTORE
       </h1>
-<h2>search result</h2>
+<h1 className=" text-dark fst-italic text-center bg-warning " >Search result</h1>
       {products.length === 0 ? (
-        <h2 className="text-dark text-center mt-5">
-search something!
+        <h2 className="text-dark  text-center mt-5 mx-5 border border-dark border-2 rounded-pill bg-info">
+Search something!
         </h2>
       ) : (
         
@@ -74,7 +79,7 @@ search something!
 
       )}
 <br/>
-<h1>suggested</h1>
+<h1 className=" text-dark text-center bg-warning fst-italic" >Suggested</h1>
 <Olditemdisplayed  id={0}/>
 <Olditemdisplayed  id={100}/>
 <Olditemdisplayed  id={250}/>
@@ -83,6 +88,7 @@ search something!
     
 
     </div>
+       
   );
 }
 

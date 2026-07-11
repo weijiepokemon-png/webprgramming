@@ -176,8 +176,7 @@ function Checkout() {
 
       <br /><br />
 
-      <button>Continue Shopping</button>
-
+      {/**below when clicked, move to payment gateway page */}
       <button>Place Order</button>
 
     </div>

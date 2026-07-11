@@ -4,7 +4,7 @@ function HomeButton(){
     //THE HOME BUTTON
     return(
         <>
-        <Link to="/"> <h1>HOME</h1> </Link>
+        <Link to="/"  className="btn btn-primary"> HOME </Link>
         
         </>
     );

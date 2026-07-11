@@ -82,13 +82,12 @@ function movepage(){
 
   return (
     <div
-      className="card container shadow-sm lead border-dark border-2 mb-3 mb-4"
+className="card container shadow-sm lead border-dark border-2 mb-3 mb-4 bg-info" 
       onClick={changePage}
     >
-      <h3>{product}</h3>
-
-      <p>{description}</p>
-      <h4>${price}</h4>
+      <h3 className=" text-dark  fw-bold   ">{product}</h3>
+            <p className="fs-6 fw-semibold lh-1">{description}</p>
+            <h4>${price}</h4>
 
     </div>
   );

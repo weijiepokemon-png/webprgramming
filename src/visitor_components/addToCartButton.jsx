@@ -2,7 +2,7 @@
 function AddToCart(){
     return(
         <>
-        <button>ADD TO CART</button>
+        <button >ADD TO CART</button>
         </>
     );
 }

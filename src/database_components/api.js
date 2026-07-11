@@ -1,6 +1,11 @@
 // my purpose is to help other components talk to the backend, 
 //so im doing the get methods
 // the components call me instead
+
+//however, it didnt work...
+
+/** 
+
 import axios from "axios";
 const headers = {'Accept': 'application/json'};//for axios getter
 
@@ -29,7 +34,7 @@ export function getproductprice(i){
     })
     .catch((error) => { console.log(error);});
 
-}
+}*/
 
 
 /**=====================================================
@@ -38,6 +43,8 @@ export function getproductprice(i){
  */
 //const API_BASE = ''
 
+
+/**
 async function parseJson(response) {
   const data = await response.json()
   if (!response.ok) {
@@ -81,3 +88,4 @@ export async function fetchProducts({ search = '', genreId = '', limit = 24 } = 
 export async function fetchGenres() {
   return apiList('/api/inft3050/Genre', { limit: 10 })
 }
+ */

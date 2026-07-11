@@ -1,6 +1,6 @@
 /**
  * MY ASSIGNMENT — Authentication (register page)
- */
+
 import { useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
@@ -117,3 +117,4 @@ export default function RegisterPage() {
     </section>
   )
 }
+ */

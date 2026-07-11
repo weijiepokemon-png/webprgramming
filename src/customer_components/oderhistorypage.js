@@ -10,17 +10,10 @@ function OrderHistory() {
       <div >
 
      
-          <button className="btn btn-outline-dark me-3">
-            Home
-          </button>
+       
       
 
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search Bar"
-        />
-
+       
       </div>
 
       {/* Main Content */}

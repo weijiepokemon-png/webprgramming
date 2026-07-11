@@ -6,8 +6,8 @@ import { useState } from "react";
 function AboutButton(){
     return(<>
    
-          <Link to="/about" >
-       <h4>ABOUT US</h4>
+          <Link to="/about"  className="btn btn-primary" >
+       ABOUT US
       </Link>
        </>
 

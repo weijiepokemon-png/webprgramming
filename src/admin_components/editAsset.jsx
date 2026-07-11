@@ -29,10 +29,27 @@ let [author, setauthor]=useState();
 let [listID, setListID]=useState();
 let[price, setPrice]=useState();
 
-    
 
     const headers = {'Accept': 'application/json'}; 
-    axios.get("http://localhost:3001/api/inft3050/Product?limit=410", {headers: headers}) 
+ 
+    
+
+function changeName(){
+    let input= prompt("ENTER NEW DETAIL");
+    if(input !==null){
+          console.log(`DATA: ${input}`);
+
+          //do post request to set the data for this
+          let i = id;
+                    console.log(i);
+
+          changeNameData(i , input);
+
+    }
+}
+
+//GET ALL THE DATA TO SHOW
+axios.get("http://localhost:3001/api/inft3050/Product?limit=410", {headers: headers}) 
             .then((response) => {
             setProduct(JSON.stringify(response.data.list[itemID].Name, null, 2));  
             setDescription(JSON.stringify(response.data.list[itemID].Description, null, 2));  
@@ -48,61 +65,65 @@ let[price, setPrice]=useState();
         // console.log(response.data.list[productID].Price); 
         setPrice(JSON.stringify(response.data.list[itemID].Price, null, 2));}  )
       .catch(  (error) => { 
-     //   console.log(error);
+        console.log(error);
      } );
-    
 
-function changeName(){
-    let input= prompt("ENTER NEW DETAIL");
+
+
+
+function changeDescription(){
+  
+let input= prompt("ENTER NEW DETAIL");
     if(input !==null){
           console.log(`DATA: ${input}`);
 
           //do post request to set the data for this
-          let i = {itemID}.itemID;
-          changeNameData(i , input);
+          let i = id;
+                    console.log(i);
+
+          changeDesData(i , input);
 
     }
-}
-
-function changeDescription(){
-        let input= prompt("ENTER NEW DETAIL");
-        if(input !==null){
-          console.log(`DATA: ${input}`);
-
-          //do post request to set the data for this
-          let i = {itemID}.itemID;
-          changeNameData(i , input);
-
-    }
-
-
 
 }
 
 function changeAuthor(){
-        let input= prompt("ENTER NEW DETAIL");
+    
+    let input= prompt("ENTER NEW DETAIL");
         if(input !==null){
-          console.log(`DATA: ${input}`);
+            console.log(`DATA: ${input}`);
 
-          //do post request to set the data for this
-          let i = {itemID}.itemID;
-          changeNameData(i , input);
+            //do post request to set the data for this
+            let i = id;
+                        console.log(i);
 
-    }
+            changeAutData(i , input);
+
+        }
 
 
 }
 
 function changePrice(){
-        let input= prompt("ENTER NEW DETAIL");
+
+
+  let input= prompt("ENTER NEW DETAIL");
         if(input !==null){
-          console.log(`DATA: ${input}`);
+            console.log(`DATA: ${input}`);
 
-          //do post request to set the data for this
-          let i = {itemID}.itemID;
-          changeNameData(i , input);
+//check if input is number
+if(isNaN(input)){
+    alert(`enter number`);
+}
 
-    }
+            //do post request to set the data for this
+            let i = id;
+                        console.log(i);
+
+            changePriceData(i , input);
+
+        }
+
 
 
 }
@@ -110,27 +131,141 @@ function changePrice(){
 //when clicking button at bottom of page, kill this asset
 function deleteAsset(){
     //call delete request on object, by the index
-}
+
+
+
+
+}//end of method to delete
+
+
+const changePriceData = async (index, data) => {
+        //console.log(data);
+
+        //try to set data
+        try {
+            //make http request to this object
+          //"http://localhost:3001/api/inft3050/Stocktake?limit=500"
+            const response = await fetch(`/api/inft3050/Stocktake/${index}`, {
+                method: 'PATCH',
+                headers: {'Content-Type': 'application/json',},
+                body: JSON.stringify({Price: data}),      //THIS IS WHERE U PICK THE STAT 
+                credentials: "include" 
+            });
+
+            const newdata = await response.json(); //get the name attribute
+
+            //convert to string
+            //JSON.stringify(newdata);
+            console.log(`new data: ${newdata}`);
+            console.log(response);
+
+
+           //update the local state, in the use state
+           setPrice(data);
+        } 
+
+        //in case of failure
+        catch (error) {
+            console.error('Error updating:', error);
+         }
+
+};//end of updater method for price
+
+ const changeAutData = async (index, data) => {
+        //console.log(data);
+
+        //try to set data
+        try {
+            //make http request to this object
+          
+            const response = await fetch(`/api/inft3050/Product/${index}`, {
+                method: 'PATCH',
+                headers: {'Content-Type': 'application/json',},
+                body: JSON.stringify({Author: data}),      //THIS IS WHERE U PICK THE STAT 
+                credentials: "include" 
+            });
+
+            const newdata = await response.json(); //get the name attribute
+
+            //convert to string
+            //JSON.stringify(newdata);
+            console.log(`new data: ${newdata}`);
+            console.log(response);
+
+
+           //update the local state, in the use state
+           setItemAuthor(data);
+        } 
+
+        //in case of failure
+        catch (error) {
+            console.error('Error updating:', error);
+         }
+
+};//end of updater method for aut
+
+  const changeDesData = async (index, data) => {
+        //console.log(data);
+
+        //try to set data
+        try {
+            //make http request to this object
+          
+            const response = await fetch(`/api/inft3050/Product/${index}`, {
+                method: 'PATCH',
+                headers: {'Content-Type': 'application/json',},
+                body: JSON.stringify({Description: data}),      //THIS IS WHERE U PICK THE STAT 
+                credentials: "include" 
+            });
+
+            const newdata = await response.json(); //get the name attribute
+
+            //convert to string
+            //JSON.stringify(newdata);
+            console.log(`new data: ${newdata}`);
+            console.log(response);
+
+
+           //update the local state, in the use state
+           setDescription(data);
+        } 
+
+        //in case of failure
+        catch (error) {
+            console.error('Error updating:', error);
+         }
+
+};//end of updater method for description
 
 //code from lecture notes. async ,method that handle data in json
 //index - the array index
 //data - the new data to be sent in
     const changeNameData = async (index, data) => {
+        //console.log(data);
+
         //try to set data
         try {
             //make http request to this object
             //console.log({itemID}.itemID); //debug data type argument
            // console.log(index);
             //console.log(typeof index);
-            const response = await fetch(`http://localhost:3001/api/inft3050/Product/${index}`, {
+            const response = await fetch(`/api/inft3050/Product/${index}`, {
                 method: 'PATCH',
                 headers: {'Content-Type': 'application/json',},
-                body: JSON.stringify({Name: data})
+                body: JSON.stringify({Name: data}),
+                credentials: "include" 
             });
 
             const newdata = await response.json(); //get the name attribute
+
+            //convert to string
+            //JSON.stringify(newdata);
             console.log(`new data: ${newdata}`);
-           // setUsers(users.map(user => (user.id === id ? newUser : user))); //update the local state, in the use state
+            console.log(response);
+
+
+           //update the local state, in the use state
+           setProduct(data);
         } 
 
         //in case of failure
