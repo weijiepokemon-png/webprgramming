@@ -30,7 +30,6 @@ const AuthProvider=({children})=>{
              //console.log(data);
 
 
-//something is wrong in below methods
             //on success, set use state to it
             const res=await response.json();
             console.log(res); //correct. username: adminAccount , password: adminPW

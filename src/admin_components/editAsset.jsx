@@ -31,8 +31,71 @@ let[price, setPrice]=useState();
 
 
     const headers = {'Accept': 'application/json'}; 
+      const navigate = useNavigate(); 
+
  
+    //when clicking button at bottom of page, kill this asset
+  function deleteAsset(){
+    let i = id;
+    //call delete request on object, by the index
+      //  console.log(` deleting item, ID:${i}`);
+
+       killDataInDatabase(i);
+
+          
+}//end of method to delete
+
+
+async function killDataInDatabase(index){
+/**
+ * //tried deleting, didnt work
+ * 
+    //delete in product in order list
+    const response3= await fetch(`/api/inft3050/ProductsInOrders/${index}`, {
+                        method: 'DELETE',
+                    
+                        credentials: "include" 
+                    });
+                    console.log(response3)
+
+//delete product in the stocktake list
     
+    const response2= await fetch(`/api/inft3050/Stocktake/${index}`, {
+                        method: 'DELETE',
+                    
+                        credentials: "include" 
+                    });
+                    console.log(response2)
+
+
+    //delete product in product list
+ const response =  await fetch(`/api/inft3050/Product/${index}`, {
+                        method: 'DELETE',
+                    
+                        credentials: "include" 
+                    });
+        console.log(response);
+   
+  const result = await response.text();
+console.log(result);
+ 
+ */
+
+//now doing by editing all the data to null
+let input="-----------------------";
+let i =index;
+let deadprice=0;
+changeNameData(i , input);
+ changeDesData(i , input);
+     changeAutData(i , input);
+
+     //price still affected by the other tables
+ //changePriceData(i , deadprice);
+        //then go back
+            //navigate(-1);
+
+}
+
 
 function changeName(){
     let input= prompt("ENTER NEW DETAIL");
@@ -128,14 +191,7 @@ if(isNaN(input)){
 
 }
 
-//when clicking button at bottom of page, kill this asset
-function deleteAsset(){
-    //call delete request on object, by the index
 
-
-
-
-}//end of method to delete
 
 
 const changePriceData = async (index, data) => {
