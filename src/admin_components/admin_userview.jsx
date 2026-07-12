@@ -5,14 +5,15 @@ import { Link } from 'react-router-dom';
 
 import { useNavigate } from "react-router-dom";
 import TableUser from "./usertable";
-
+import LogOutButton from "../userHandling_component/logoutButton";
 function Usertable(){
 
 
 
     return(<>
     <div>
-            <Link to="/">LOGOUT</Link><br/>
+      <LogOutButton/>
+            <br/>
             <TableUser/>
 
 <Link to="/adminPage">to item view</Link> 

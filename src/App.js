@@ -32,29 +32,30 @@ import Usertable from './admin_components/admin_userview';
 import './App.css' //import css
 import AuthProvider from './userHandling_component/newAuthContext'; //authentication provider wraps the whole all including global variables provider
 import { Router } from 'react-router-dom';
-
+import EditUser from './admin_components/editUser';
 import { Outlet } from "react-router-dom";
 //the router directories
 const router=createBrowserRouter([
-{element:(<AuthProvider> <Outlet/> </AuthProvider>),
+  {element:(<AuthProvider> <Outlet/> </AuthProvider>),
 
-children:[
+    children:[
 
-  {path: "/", element:(  <NormalPage /> )},    //default view
-  {path: "/loginsignup", element: <LoginSignup/>},
-  {path: "/checkout", element: <Checkout/>},
-  {path: "/about", element:<AboutPage/> },
-  {path:"/contact", element: <Contactpage/>},
-  {path:"/itempage", element:<ItemPage />}, //this page is getting prop from global var
-  {path:"/adminLogin", element:<AdminLogin/>},
-  {path:"/adminPage", element:<Page/>}, //the admin dashboard
-  {path:"/editAsset", element:<EditAsset/>}, //edit item page for admin
-  {path:"/editProfile", element:<EditProfile/>},
-  {path:"/viewCustomerProfile", element:<CustomerProfile/>},
-  {path:"/orderHistory", element:<OrderHistory/>},
-  {path:"/usertable", element:<Usertable/>}
-]
-}
+        {path: "/", element:(  <NormalPage /> )},    //default view
+        {path: "/loginsignup", element: <LoginSignup/>},
+        {path: "/checkout", element: <Checkout/>},
+        {path: "/about", element:<AboutPage/> },
+        {path:"/contact", element: <Contactpage/>},
+        {path:"/itempage", element:<ItemPage />}, //this page is getting prop from global var
+        {path:"/adminLogin", element:<AdminLogin/>},
+        {path:"/adminPage", element:<Page/>}, //the admin dashboard
+        {path:"/editAsset", element:<EditAsset/>}, //edit item page for admin
+        {path:"/editProfile", element:<EditProfile/>},
+        {path:"/viewCustomerProfile", element:<CustomerProfile/>},
+        {path:"/orderHistory", element:<OrderHistory/>},
+        {path:"/usertable", element:<Usertable/>},
+        {path:"/edituser",element:<EditUser/>}
+    ]
+  }
 ]);
 
 

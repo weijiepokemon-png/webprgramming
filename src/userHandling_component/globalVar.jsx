@@ -20,6 +20,9 @@ let [ItemDescription,gsetDescription]=useState(null);
 let[  ItemAuthor,setItemAuthor]=useState(null);
 let[id,setID]=useState(null);
 
+let[userIndex, setUserIndex]=useState(null);
+let[userID, setUserID]=useState(null);
+
 //return component, the children is the app component
 //currently only using itemid n its setter for item page n editing item
   return (
@@ -31,6 +34,8 @@ let[id,setID]=useState(null);
         ItemDescription,gsetDescription,
         ItemAuthor,setItemAuthor,
         id,setID,
+        userIndex,setUserIndex,
+        userID,setUserID,
       }}
     >
       {children}
